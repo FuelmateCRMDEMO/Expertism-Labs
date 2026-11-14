@@ -19,8 +19,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Users, Briefcase } from 'lucide-react';
 
 export default function App() {
-  // Top Navigation Bar active sheet section: Market Map (Primary Tenant) | Talent Hub | Intel
-  const [activeSection, setActiveSection] = useState<MainSectionTab>('market-map');
+  // Top Navigation Bar active sheet section: Intel | Market Map | Talent Map
+  const [activeSection, setActiveSection] = useState<MainSectionTab>('intel');
 
   // Sub-navigation inside Talent Hub view: 'marketplace' | 'projects' | 'about'
   const [talentHubSubTab, setTalentHubSubTab] = useState<'marketplace' | 'projects' | 'about'>('marketplace');

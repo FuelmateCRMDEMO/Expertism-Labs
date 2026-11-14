@@ -36,26 +36,26 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const tabs: { id: MainSectionTab; name: string; sheetNum: string; subtitle: string; isPrimary?: boolean; icon: React.ComponentType<{ className?: string }> }[] = [
     {
+      id: 'intel',
+      name: 'Intel',
+      sheetNum: 'Sheet 1',
+      subtitle: 'Executive Search & Advisory',
+      icon: Briefcase
+    },
+    {
       id: 'market-map',
       name: 'Market Map',
-      sheetNum: 'Primary',
+      sheetNum: 'Sheet 2',
       subtitle: 'Market Mapping & Org Intel',
       isPrimary: true,
       icon: Compass
     },
     {
       id: 'talent-hub',
-      name: 'Talent Hub',
-      sheetNum: 'Sheet 2',
+      name: 'Talent Map',
+      sheetNum: 'Sheet 3',
       subtitle: 'On-Demand Vetted Talent',
       icon: Sparkles
-    },
-    {
-      id: 'intel',
-      name: 'Intel',
-      sheetNum: 'Sheet 3',
-      subtitle: 'Executive Search & Advisory',
-      icon: Briefcase
     }
   ];
 
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         
         {/* Brand Logo */}
         <div 
-          onClick={() => setActiveSection('market-map')}
+          onClick={() => setActiveSection('intel')}
           className="flex items-center gap-3 cursor-pointer group shrink-0"
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span className="hidden">ACTIVE:</span>
           <span className="text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
-            {activeSection === 'market-map' ? 'MARKET MAP' : activeSection.replace('-', ' ')}
+            {activeSection === 'intel' ? 'INTEL' : activeSection === 'market-map' ? 'MARKET MAP' : 'TALENT MAP'}
           </span>
         </div>
 
